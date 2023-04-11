@@ -2,27 +2,35 @@ lockfileVersion: 5.4
 
 specifiers:
   '@rainbowatcher/eslint-config': 0.0.1-beta.13
+  '@trpc/client': ^10.19.1
+  '@trpc/server': ^10.19.1
   '@types/node': ^18.15.11
   bumpp: ^9.1.0
   commitlint: ^17.5.1
   eslint: ^8.37.0
+  h3: ^1.6.4
   husky: ^8.0.3
   jiti: ^1.18.2
   pkgroll: ^1.9.0
   typescript: ^5.0.3
   uvu: ^0.5.6
+  zod: ^3.21.4
 
 devDependencies:
   '@rainbowatcher/eslint-config': 0.0.1-beta.13_g5k5mdb72x5an5hugrefg5vicq
+  '@trpc/client': 10.19.1_@trpc+server@10.19.1
+  '@trpc/server': 10.19.1
   '@types/node': 18.15.11
   bumpp: 9.1.0
   commitlint: 17.5.1
   eslint: 8.38.0
+  h3: 1.6.4
   husky: 8.0.3
   jiti: 1.18.2
   pkgroll: 1.9.0_typescript@5.0.3
   typescript: 5.0.3
   uvu: 0.5.6
+  zod: 3.21.4
 
 packages:
 
@@ -698,6 +706,18 @@ packages:
       rollup: 2.79.1
     dev: true
 
+  /@trpc/client/10.19.1_@trpc+server@10.19.1:
+    resolution: {integrity: sha512-H61dIgoAjiA7/SfuHlUAsqshhaxOSSRFyEfaoBwYvXzLyno+fvQRUXvxpsC4A8IsDuNX2pxiggAK8AwTNKqIzg==}
+    peerDependencies:
+      '@trpc/server': 10.19.1
+    dependencies:
+      '@trpc/server': 10.19.1
+    dev: true
+
+  /@trpc/server/10.19.1:
+    resolution: {integrity: sha512-LAa8BQhMYJL+GU28cigOPKlEogCEBeff1wIKflnUj34ou1ythwTboe7Mi6rjDW3Q9EasP7s9YmqRv9Fkp8fL4Q==}
+    dev: true
+
   /@tsconfig/node10/1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
     dev: true
@@ -1214,6 +1234,10 @@ packages:
       meow: 8.1.2
       split2: 3.2.2
       through2: 4.0.2
+    dev: true
+
+  /cookie-es/0.5.0:
+    resolution: {integrity: sha512-RyZrFi6PNpBFbIaQjXDlFIhFVqV42QeKSZX1yQIl6ihImq6vcHNGMtqQ/QzY3RMPuYSkvsRwtnt5M9NeYxKt0g==}
     dev: true
 
   /cosmiconfig-typescript-loader/4.3.0_yn4xpz4ei2cnz6chm4vbw2etyi:
@@ -2007,6 +2031,18 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
+  /h3/1.6.4:
+    resolution: {integrity: sha512-uoDNeaoeDRwWBtwwi4siZ6l5sBmDJpnpcBssuAbvsaPBonl8vP7Ym4tFPe+tAvGM0GbUoC24wYcloCG+J9hqmA==}
+    dependencies:
+      cookie-es: 0.5.0
+      defu: 6.1.2
+      destr: 1.2.2
+      iron-webcrypto: 0.6.0
+      radix3: 1.0.1
+      ufo: 1.1.1
+      uncrypto: 0.1.2
+    dev: true
+
   /hard-rejection/2.1.0:
     resolution: {integrity: sha512-VIZB+ibDhx7ObhAe7OVtoEbuP4h/MuOTHJ+J8h/eBXotJYl0fBgR72xDFCKgIh22OJZIOVNxBMWuhAr10r8HdA==}
     engines: {node: '>=6'}
@@ -2133,6 +2169,10 @@ packages:
       get-intrinsic: 1.2.0
       has: 1.0.3
       side-channel: 1.0.4
+    dev: true
+
+  /iron-webcrypto/0.6.0:
+    resolution: {integrity: sha512-WYgEQttulX/+JTv1BTJFYY3OsAb+ZnCuA53IjppZMyiRsVdGeEuZ/k4fJrg77Rzn0pp9/PgWtXUF+5HndDA5SQ==}
     dev: true
 
   /is-array-buffer/3.0.2:
@@ -2869,6 +2909,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /radix3/1.0.1:
+    resolution: {integrity: sha512-y+AcwZ3HcUIGc9zGsNVf5+BY/LxL+z+4h4J3/pp8jxSmy1STaCocPS3qrj4tA5ehUSzqtqK+0Aygvz/r/8vy4g==}
+    dev: true
+
   /rc9/2.1.0:
     resolution: {integrity: sha512-ROO9bv8PPqngWKoiUZU3JDQ4sugpdRs9DfwHnzDSxK25XtQn6BEHL6EOd/OtKuDT2qodrtNR+0WkPT6l0jxH5Q==}
     dependencies:
@@ -3336,6 +3380,10 @@ packages:
       which-boxed-primitive: 1.0.2
     dev: true
 
+  /uncrypto/0.1.2:
+    resolution: {integrity: sha512-kuZwRKV615lEw/Xx3Iz56FKk3nOeOVGaVmw0eg+x4Mne28lCotNFbBhDW7dEBCBKyKbRQiCadEZeNAFPVC5cgw==}
+    dev: true
+
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
@@ -3484,4 +3532,8 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: true
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: true

@@ -2,40 +2,33 @@
 ![GitHub License](https://img.shields.io/github/license/rainbowatcher/ts-starter)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/rainbowatcher/ts-starter)
 
-# ts-starter
+# h3-trpc
 
-## Install Size
-
-- [DevDependencies](https://packagephobia.com/result?p=@ava/typescript,@rainbowatcher/eslint-config,bumpp,commitlint,eslint,husky,jiti,pkgroll,typescript,uvu)
-  - `commitlint`: [![install size](https://packagephobia.com/badge?p=commitlint)](https://packagephobia.com/result?p=commitlint)
-  - `typescript`: [![install size](https://packagephobia.com/badge?p=typescript)](https://packagephobia.com/result?p=typescript)
-  - `eslint` & `@rainbowatcher/eslint-config`: [![install size](https://packagephobia.com/badge?p=@rainbowatcher/eslint-config)](https://packagephobia.com/result?p=@rainbowatcher/eslint-config)
-  - `pkgroll`: [![install size](https://packagephobia.com/badge?p=pkgroll)](https://packagephobia.com/result?p=pkgroll)
-  - `bumpp`: [![install size](https://packagephobia.com/badge?p=bumpp)](https://packagephobia.com/result?p=bumpp)
-  - `@types/node`: [![install size](https://packagephobia.com/badge?p=@types/node)](https://packagephobia.com/result?p=@types/node)
-  - `jiti`: [![install size](https://packagephobia.com/badge?p=jiti)](https://packagephobia.com/result?p=jiti)
-  - `uvu`: [![install size](https://packagephobia.com/badge?p=uvu)](https://packagephobia.com/result?p=uvu)
-  - `husky`: [![install size](https://packagephobia.com/badge?p=husky)](https://packagephobia.com/result?p=husky)
+h3 integration with trpc.
 
 ## Usage
 
-1. Clone this repository
+1. Install
 
 ```bash
-npx degit https://github.com/rainbowatcher/ts-starter.git <pkg-name>
+pnpm i -D h3-trpc
 ```
 
-2. Install dependencies by using `pnpm install`
-3. Setup git hooks
-   
-```bash
-npx husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
+2. Import
+
+```typescript
+import { createH3Middleware } from "h3-trpc"
+
+const app = createApp()
+const { router, procedure } = initTRPC.create()
+
+const appRouter = router({
+  // ...define your router
+})
+
+app.use("/trpc", createH3Middleware({ router: appRouter }))
+const server = createServer(toNodeListener(app)).listen(3000)
 ```
-
-3. Replace `ts-starter` to your package name in package.json
-4. Change the author name in `LICENSE`
-5. Clean up the READMEs and remove routes
-
 
 ## License
 
