@@ -1,21 +1,21 @@
 {
-  "name": "ts-starter",
+  "name": "h3-trpc",
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@7.1.0",
   "description": "",
   "author": "rainbowatcher <rainbow-w@qq.com>",
   "license": "MIT",
-  "homepage": "https://github.com/rainbowatcher/ts-starter#readme",
+  "homepage": "https://github.com/rainbowatcher/h3-trpc#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rainbowatcher/ts-starter.git"
+    "url": "git+https://github.com/rainbowatcher/h3-trpc.git"
   },
   "bugs": {
-    "url": "https://github.com/rainbowatcher/ts-starter/issues"
+    "url": "https://github.com/rainbowatcher/h3-trpc/issues"
   },
   "keywords": [
-    "ts-starter"
+    "h3-trpc"
   ],
   "sideEffects": false,
   "exports": {
