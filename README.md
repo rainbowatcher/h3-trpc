@@ -17,17 +17,42 @@ pnpm i -D h3-trpc
 2. Import
 
 ```typescript
+// server.ts
+import { createServer } from "node:http"
 import { createH3Middleware } from "h3-trpc"
+import { initTRPC } from "@trpc/server"
+import * as h3 from "h3"
 
 const app = createApp()
-const { router, procedure } = initTRPC.create()
+const t = initTRPC.create()
 
-const appRouter = router({
-  // ...define your router
+const appRouter = t.router({
+  hello: t.procedure
+      .input(z.string())
+      .query(opts => `hello ${opts.input}`),
 })
 
+export type AppRouter = typeof appRouter
+
+const app = h3.createApp()
 app.use("/trpc", createH3Middleware({ router: appRouter }))
-const server = createServer(toNodeListener(app)).listen(3000)
+// You can set the route path to "/" or simply leave it unset
+// e.g. app.use(createH3Middleware({ router: appRouter }))
+createServer(h3.toNodeListener(app)).listen(3000)
+```
+
+```ts
+import { createTRPCProxyClient, httpBatchLink } from "@trpc/client"
+
+client = createTRPCProxyClient<AppRouter>({
+    links: [
+        httpBatchLink({
+            // The base path of the request URL depends on how the route path is configured.
+            url: "http://localhost:3000/trpc",
+        }),
+    ],
+})
+const resp = await client.hello.query("world")
 ```
 
 ## License
